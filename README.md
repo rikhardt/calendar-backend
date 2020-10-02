@@ -1,3 +1,3 @@
 # Backend MERN - Calendar
 
-Backend realzado con Node.js y mongodb
+Backend hecho con Node.js, JWT e integrado con mongodb
