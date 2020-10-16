@@ -97,7 +97,7 @@ const eliminarEvento = async(req, res = response) => {
     
     try {
 
-        const evento = await Evento.findByIdAndDelete(eventoId)
+        const evento = await Evento.findById(eventoId);
         if (!evento) {
             return res.status(404).json({
                 ok: false,
@@ -111,6 +111,8 @@ const eliminarEvento = async(req, res = response) => {
                 msg: 'No tiene privilegio de eliminar este evento'
             });
         }
+
+        await Evento.findByIdAndDelete(eventoId)
 
         res.json({ ok: true })
         
